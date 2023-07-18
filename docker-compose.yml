@@ -14,8 +14,8 @@ services:
       - /usr/src/app/node_modules
     tty: true
     environment: 
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_PORT=5432
     expose: 
       - "3000"
     command: npm run start
@@ -47,9 +47,9 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     environment: 
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=1234
     expose: 
-      - ${POSTGRES_PORT}
+      - "5432"
     networks: 
       - node-network
 
